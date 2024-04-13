@@ -3,14 +3,47 @@
 AF_DCMotor motor1(1); // connecter le moteur1 au port M1 du module Shield L293D
 AF_DCMotor motor2(2);
 
+
+uint16_t debut;
+
+
 void setup() {
-  
+  /*
+  while(tirette);
+  debut = millis();
+  */
 }
 
 void loop() {
+  /*
+  // tant que on reste dans le temps impartit et qu'on a pas touché une plante
+  while (!plante touché && (millis() - debut < 10**3) && !objetDetecte){
+    if (!on détecte un objet && millis - debut < tps limite pour détecter){
+      stop = 1;
+    }
+    
+    // on avance 
+    motor1.setSpeed(100); // définir la vitesse du moteur 1
+    motor2.setSpeed(100); // définir la vitesse du moteur 2 
 
-  if 
-  // Set the speed to start, from 0 (off) to 255 (max speed)
+    motor1.run(FORWARD);
+    motor2.run(FORWARD);
+
+
+  }
+  // on arrete tout 
+  
+  motor1.setSpeed(0); // définir la vitesse du moteur 1
+  motor2.setSpeed(0); // définir la vitesse du moteur 2 
+      
+  // on eteint les moteur
+  motor1.run(RELEASE);
+  motor2.run(RELEASE);
+
+  
+  */
+  
+  
   motor1.setSpeed(100); // définir la vitesse du moteur 1
   motor2.setSpeed(100); // définir la vitesse du moteur 2 
   // turn on motor
@@ -22,45 +55,5 @@ void loop() {
   // on eteint le moteur
   motor1.run(RELEASE);
   motor2.run(RELEASE);
-  /*
-  for(unsigned char angle = 0; angle <= 180; angle++){
-    servo.write(angle);
-    dist = ultrasonic.Ranging(CM);
-    Serial.println(dist);
-    while (dist < 5){ // tant que l'on détecte un object a moins de 5 cm on s'arrete 
-        // vitesse du 1er moteur 
-        analogWrite(pinEN1, 0);
-
-        // vitesse du 2eme moteur 
-        analogWrite(pinEN2, 0);
-        dist = ultrasonic.Ranging(CM);
-    }
-    
-    // vitesse du 1er moteur 
-    analogWrite(pinEN1, vitesseAvance);
-
-    // vitesse du 2eme moteur 
-    analogWrite(pinEN2, vitesseAvance);
-    delay(1);
-  }
-
-  for(unsigned char angle = 180; angle >= 0; angle--){
-    servo.write(angle);
-    dist = ultrasonic.Ranging(CM);
-    Serial.println(dist);
-    while(dist < 5){ // tant que l'on détecte un object a moins de 5 cm on s'arrete 
-        // vitesse du 1er moteur 
-        analogWrite(pinEN1, vitesseArret);
-
-        // vitesse du 2eme moteur 
-        analogWrite(pinEN2, vitesseArret);
-        dist = ultrasonic.Ranging(CM);
-    }
-    // vitesse du 1er moteur 
-    analogWrite(pinEN1, vitesseAvance);
-        
-    // vitesse du 2eme moteur 
-    analogWrite(pinEN2, vitesseAvance);
-    delay(1);
-  }*/
+  
 }
